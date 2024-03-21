@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliver shop</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="silver-oak-university~4.jpg">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+            padding: auto;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        select:focus {
+            border-color: #007bff;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .success-message {
+            color: green;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center mb-4">Payment Details</h2>
+        <form id="payment-form">
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Billing Address</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <label for="cardnumber">Credit Card Number</label>
+                <input type="text" id="cardnumber" name="cardnumber" required>
+            </div>
+            <div class="form-group">
+                <label for="expiration">Expiration Date</label>
+                <input type="text" id="expiration" name="expiration" placeholder="MM/YY" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" required>
+            </div>
+            <div class="form-group">
+                <label for="Price">Price</label>
+                <input type="text" id="Price" name="Price" required>
+            </div>
+            <div class="form-group">
+                <label for="cardtype">Card Type</label>
+                <select id="cardtype" name="cardtype" required>
+                    <option value="">Select Card Type</option>
+                    <option value="debit">Debit Card</option>
+                    <option value="visa">Visa</option>
+                    <option value="mastercard">Mastercard</option>
+                    <option value="amex">American Express</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="zipcode">Zip/Postal Code</label>
+                <input type="text" id="zipcode" name="zipcode" required>
+            </div>
+            <button type="submit" class="btn btn-block">Submit Payment</button>
+        </form>
+        <div id="success-message" class="success-message" style="display: none;">
+            Payment successful! Thank you for your purchase.
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Silver shop</p>
+    </footer>
+
+    <script>
+        document.getElementById('payment-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            // Simulate payment processing (you may replace this with actual payment processing)
+            setTimeout(function() {
+                // Show success message
+                document.getElementById('success-message').style.display = 'block';
+            }, 2000); // 2000 milliseconds (2 seconds) delay to simulate processing
+        });
+
+    document.getElementById('payment-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+        // Simulate payment processing (you may replace this with actual payment processing)
+        setTimeout(function() {
+            // Show success message
+            document.getElementById('success-message').style.display = 'block';
+            // Hide the form
+            document.getElementById('payment-form').style.display = 'none';
+            // Optionally, you can add additional actions here such as redirecting to a confirmation page
+            // window.location.href = 'confirmation.html';
+        }, 2000); // 2000 milliseconds (2 seconds) delay to simulate processing
+    });
+</script>
+
+</body>
+</html>
